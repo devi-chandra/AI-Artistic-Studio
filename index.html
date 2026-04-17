@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎨 AI Artistic Studio</title>
+  <style>
+    /* Background */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390, #fbc2eb, #a18cd1);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1rem;
+      color: #fefefe;
+      margin-bottom: 30px;
+    }
+
+    /* Card (Glassmorphism effect) */
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 650px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    #output, #artistic {
+      margin-top: 20px;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+
+    select, .btn {
+      margin: 15px 10px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    select {
+      background: #fff;
+      color: #333;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #e03c1f, #b71c61);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎨 AI Artistic Studio</h1>
+  <p>Upload an image and transform it into art with different styles.</p>
+
+  <div class="card">
+    <input type="file" id="upload" accept="image/*"><br>
+    <img id="output" alt="Original Image" hidden><br>
+
+    <!-- Style Dropdown -->
+    <select id="style">
+      <option value="original">✨ Original</option>
+      <option value="grayscale">🖤 Grayscale</option>
+      <option value="sepia">📜 Sepia</option>
+      <option value="contrast">🌈 High Contrast</option>
+      <option value="blur">💫 Soft Blur</option>
+      <option value="invert">🌑 Negative</option>
+      <option value="hue">🎨 Color Shift</option>
+      <option value="painting">🖌 Painting</option>
+      <option value="cartoon">🎭 Cartoon</option>
+      <option value="sketch">✏️ Sketch</option>
+      <option value="ghibli">🌸 Ghibli Style</option>
+    </select><br>
+
+    <button class="btn" onclick="applyArt()">Apply Art</button>
+    <button class="btn" onclick="downloadArt()">Download</button><br>
+
+    <canvas id="artistic"></canvas>
+  </div>
+
+  <script>
+    const upload = document.getElementById('upload');
+    const output = document.getElementById('output');
+    const canvas = document.getElementById('artistic');
+    const ctx = canvas.getContext('2d');
+
+    // Show uploaded image
+    upload.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        output.src = URL.createObjectURL(file);
+        output.hidden = false;
+
+        output.onload = () => {
+          canvas.width = output.width;
+          canvas.height = output.height;
+          ctx.drawImage(output, 0, 0, canvas.width, canvas.height);
+        };
+      }
+    });
+
+    // Apply artistic filter
+    function applyArt() {
+      if (!output.src) {
+        alert("Please upload an image first!");
+        return;
+      }
+
+      const style = document.getElementById("style").value;
+      ctx.filter = "none";
+
+      if (style === "grayscale") ctx.filter = "grayscale(100%)";
+      else if (style === "sepia") ctx.filter = "sepia(100%)";
+      else if (style === "contrast") ctx.filter = "contrast(180%)";
+      else if (style === "blur") ctx.filter = "blur(2px)";
+      else if (style === "invert") ctx.filter = "invert(100%)";
+      else if (style === "hue") ctx.filter = "hue-rotate(90deg)";
+      else if (style === "painting") ctx.filter = "contrast(120%) saturate(120%)";
+      else if (style === "cartoon") ctx.filter = "contrast(200%) saturate(150%)";
+      else if (style === "sketch") ctx.filter = "grayscale(100%) contrast(200%) brightness(120%)";
+      else if (style === "ghibli") ctx.filter = "saturate(140%) brightness(110%)";
+
+      ctx.drawImage(output, 0, 0, canvas.width, canvas.height);
+    }
+
+    // Download artwork
+    function downloadArt() {
+      const link = document.createElement("a");
+      link.download = "artistic-image.jpeg";
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+  </script>
+
+</body>
+</html>
