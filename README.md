@@ -46,28 +46,25 @@ AI-Artistic-Studio/
 ├── index.html
 └── README.md
 
----
 
-🌐 Live Deployment
+⚙️ Run Locally
 
-This project can be deployed easily using GitHub Pages.
+Open:
 
-Example:
+index.html
 
-https://yourusername.github.io/AI-Artistic-Studio
+in browser.
 
-## 🎯 Objectives
- >Showcase front-end creativity
- >Build a themed project for a global event
- >Improve UI/UX design skills
- >Demonstrate simple project deployment skills
+🌐 Deployment
 
-🔮 Future Improvements
- >Add AI image filters
- >Add photo upload functionality
- >Add animation effects
- >Add downloadable artistic templates
- >Convert into full photography portfolio website
+Can be hosted using GitHub Pages.
+
+🎯 Learning Outcomes
+
+ >DOM manipulation
+ >Image processing in browser
+ >UI/UX design
+ >Interactive front-end development
 
 👨‍💻 Author
 
