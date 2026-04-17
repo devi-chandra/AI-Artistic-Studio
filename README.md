@@ -42,10 +42,10 @@ Developed as a creative project for World Photography Day to celebrate digital p
 
 ## 📂 Structure
 
-```text
 AI-Artistic-Studio/
 ├── index.html
 └── README.md
+
 ---
 
 🌐 Live Deployment
