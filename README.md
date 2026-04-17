@@ -43,8 +43,9 @@ Developed as a creative project for World Photography Day to celebrate digital p
 ## 📂 Structure
 
 AI-Artistic-Studio/
-├── index.html
-└── README.md
+
+── index.html
+── README.md
 
 
 ⚙️ Run Locally
