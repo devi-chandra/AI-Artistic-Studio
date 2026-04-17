@@ -1,50 +1,52 @@
 # AI Artistic Studio 🎨📸
 
-AI Artistic Studio is a creative single-page web application developed on the occasion of **World Photography Day**. The project is designed to transform a simple webpage into an artistic digital experience using modern UI design, interactive visuals, and creativity-inspired presentation.
-
-This project demonstrates how design, photography themes, and front-end development can be combined to create an engaging user experience.
-
----
-
-## 🌍 Theme
-
-Built as a special project for **World Photography Day** to celebrate creativity, digital photography, and visual storytelling through technology.
+AI Artistic Studio is an interactive browser-based image transformation web application built for World Photography Day. Users can upload photos and instantly apply multiple creative visual styles directly in the browser.
 
 ---
 
 ## 🚀 Features
 
-- 🎨 Creative and aesthetic single-page design  
-- 📸 Photography-inspired user interface  
-- ⚡ Fast and lightweight webpage  
-- 📱 Responsive layout  
-- ✨ Interactive modern styling  
-- 🌐 Ready for GitHub Pages deployment  
+- Upload image from device
+- Real-time artistic transformations
+- Multiple creative styles:
+  - Original
+  - Grayscale
+  - Sepia
+  - High Contrast
+  - Soft Blur
+  - Negative
+  - Color Shift
+  - Painting
+  - Cartoon
+  - Sketch
+  - Ghibli Style
+
+- Fast single-page experience
+- Responsive modern UI
+- No software installation required
 
 ---
 
 ## 🛠️ Tech Stack
 
-- HTML5  
-- CSS3  
-- JavaScript (if used)  
+- HTML5
+- CSS3
 
 ---
 
-## 📂 Project Structure
+## 🌍 Theme
+
+Developed as a creative project for World Photography Day to celebrate digital photography and artistic expression.
+
+---
+
+## 📂 Structure
 
 ```text
 AI-Artistic-Studio/
 ├── index.html
 └── README.md
-
-⚙️ Run Locally
-
-Simply open the file in browser:
-
-index.html
-
-or use VS Code Live Server.
+---
 
 🌐 Live Deployment
 
